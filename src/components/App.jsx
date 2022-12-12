@@ -18,18 +18,18 @@ import "./style.css";
     }
     addGod(){
       this.setState({
-        good: this.state.good +=1,
+        good: this.state.good + 1,
       }) 
   
     }
     addNeutral(){
       this.setState({
-        neutral:  this.state.neutral +=1 ,  
+        neutral:  this.state.neutral + 1 ,  
       })
     }
     addBad(){
       this.setState({
-        bad: this.state.bad +=1,
+        bad: this.state.bad + 1,
       })
     }
     countTotalFeedback(){
