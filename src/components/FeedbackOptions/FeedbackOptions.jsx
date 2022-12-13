@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 
 class FeedbackOptions extends Component{
     render(){
+        const mas = ['Good','Neutral','Bad'];
         return(
             <div>
-                <button  type="button" onClick={this.props.onLeaveFeedback[0]}>Good</button>
-                <button  type="button" onClick={this.props.onLeaveFeedback[1]}>Neutral</button>
-                <button  type="button" onClick={this.props.onLeaveFeedback[2]}>Bad</button>
+                {mas.map((mas,i)=><button key={i} type="button" onClick={this.props.onLeaveFeedback[i]}>{mas}</button>)}
             </div>
         );
     }

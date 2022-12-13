@@ -5,13 +5,13 @@ import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
 import Notification from "./Notification";
 import "./style.css";
   class App extends Component{
+    state = {
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    }
     constructor(){
       super();
-      this.state = {
-        good: 0,
-        neutral: 0,
-        bad: 0,
-      }
       this.addGod = this.addGod.bind(this);
       this.addNeutral = this.addNeutral.bind(this);
       this.addBad = this.addBad.bind(this);
@@ -57,4 +57,3 @@ import "./style.css";
     }
   }
   export default App;
-// };
