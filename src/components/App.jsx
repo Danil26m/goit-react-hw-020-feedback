@@ -1,6 +1,5 @@
-// export const App = () => {
-  import { Component } from "react";
-  import Statistics from "components/Statistics/Statistics";
+import { Component } from "react";
+import Statistics from "components/Statistics/Statistics";
 import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
 import Notification from "./Notification";
 import "./style.css";
@@ -24,7 +23,7 @@ import "./style.css";
     }
     addNeutral(){
       this.setState({
-        neutral:  this.state.neutral + 1 ,  
+        neutral:  this.state.neutral + 1,  
       })
     }
     addBad(){
@@ -45,7 +44,7 @@ import "./style.css";
       return ( 
     <> 
     <h2>Please leave feedback</h2>
-    <FeedbackOptions  onLeaveFeedback={feedback}/> 
+    <FeedbackOptions  onLeaveFeedback={feedback} /> 
     <h2>Statistics</h2> 
     {this.countPositiveFeedbackPercentage()?
      <Statistics  good={good} neutral={neutral} bad={bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()}/>
