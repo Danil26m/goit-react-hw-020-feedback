@@ -9,27 +9,11 @@ import "./style.css";
       neutral: 0,
       bad: 0,
     }
-    constructor(){
-      super();
-      this.addGod = this.addGod.bind(this);
-      this.addNeutral = this.addNeutral.bind(this);
-      this.addBad = this.addBad.bind(this);
-    }
-    addGod(){
-      this.setState({
-        good: this.state.good + 1,
-      }) 
-  
-    }
-    addNeutral(){
-      this.setState({
-        neutral:  this.state.neutral + 1,  
-      })
-    }
-    addBad(){
-      this.setState({
-        bad: this.state.bad + 1,
-      })
+    addFetback=(event)=>{
+      const{name}= event.currentTarget;
+      this.setState((prev)=>({
+            [name]: prev[name] + 1
+          }))
     }
     countTotalFeedback(){
         return this.state.good + this.state.neutral + this.state.bad;
@@ -40,11 +24,10 @@ import "./style.css";
       }
       render(){
       const{good,neutral,bad} = this.state;
-      const feedback = [this.addGod,this.addNeutral,this.addBad];
       return ( 
     <> 
     <h2>Please leave feedback</h2>
-    <FeedbackOptions  onLeaveFeedback={feedback} /> 
+    <FeedbackOptions  onLeaveFeedback={this.addFetback} mas={Object.keys(this.state)}/> 
     <h2>Statistics</h2> 
     {this.countPositiveFeedbackPercentage()?
      <Statistics  good={good} neutral={neutral} bad={bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()}/>
